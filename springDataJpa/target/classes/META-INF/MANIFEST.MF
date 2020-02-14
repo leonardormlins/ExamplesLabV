@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: springDataJpa
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: java
+Implementation-Vendor-Id: br.gov.sp.fatec
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/springDataJpa
+Created-By: Maven Integration for Eclipse
+
