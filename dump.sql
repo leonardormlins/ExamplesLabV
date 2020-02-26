@@ -5,9 +5,28 @@ use estoque;
 create table usr_usuario (
   usr_id bigint unsigned not null auto_increment,
   usr_nome varchar(20) not null,
+  usr_photo varchar(80) not null,
   usr_senha varchar(50) not null,
   primary key (usr_id),
   unique key uni_usuario_nome (usr_nome)
+);
+
+create table pos_post (
+	pos_id bigint unsigned not null auto_increment,
+    pos_desc varchar(120),
+    pos_picture varchar(80),
+    pos_date varchar(20),
+    usr_id bigint unsigned not null,
+    primary key (pos_id),
+    foreign key pos_usr_id (usr_id) references usr_usuario (usr_id) on delete restrict on update cascade
+);
+
+create table ufu_followers (
+	usr_id_following bigint unsigned not null,
+    usr_id_followed bigint unsigned not null,
+    primary key (usr_id_following, usr_id_followed),
+    foreign key usr_following_fk (usr_id_following) references usr_usuario (usr_id) on delete restrict on update cascade,
+    foreign key usr_followed_fk (usr_id_followed) references usr_usuario (usr_id) on delete restrict on update cascade
 );
 
 create table aut_autorizacao (
